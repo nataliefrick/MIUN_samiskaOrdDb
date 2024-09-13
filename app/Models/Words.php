@@ -22,10 +22,10 @@ class Words extends Model
         'frequency_id'
     ];
 
-    protected $casts = [
-        'synonyms' => 'list',
-        'antonyms' => 'list'
+    // protected $casts = [
+    //     'synonyms' => 'list',
+    //     'antonyms' => 'list'
 
-    ];
+    // ];
 
 }
