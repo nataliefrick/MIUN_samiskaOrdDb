@@ -21,4 +21,11 @@ class Words extends Model
         'arousal_level',
         'frequency_id'
     ];
+
+    protected $casts = [
+        'synonyms' => 'list',
+        'antonyms' => 'list'
+
+    ];
+
 }
