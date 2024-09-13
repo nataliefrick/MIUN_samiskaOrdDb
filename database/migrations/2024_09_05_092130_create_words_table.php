@@ -17,8 +17,8 @@ return new class extends Migration
             $table->longText('definition_sydsamiska');
             $table->string('word_svenska');
             $table->longText('definition_svenska');
-            $table->integer('synonyms')->nullable(); //word_id of synonyms
-            $table->integer('antonyms')->nullable(); //word_id of synonyms
+            $table->string('synonyms')->nullable(); //list of synonyms
+            $table->string('antonyms')->nullable(); //list of synonyms
             $table->longText('example_of_use');
             $table->longText('link_to_update');
             $table->longText('sources');
