@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('antonyms')->nullable(); //list of synonyms
             $table->longText('example_of_use');
             $table->longText('link_to_update');
-            $table->longText('sources');
-            $table->integer('arousal_level');
-            $table->integer('frequency_id');
+            $table->longText('sources')->nullable();
+            $table->integer('arousal_level')->nullable();
+            $table->integer('frequency_id')->nullable();
             // $table->foreignId('frequency');
             $table->timestamps();
             
