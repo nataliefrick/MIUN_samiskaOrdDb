@@ -21,7 +21,7 @@ return new class extends Migration
             $table->longText('definition_norska')->nullable();
             $table->text('synonyms')->nullable(); //list of synonyms
             $table->text('antonyms')->nullable(); //list of synonyms
-            $table->longText('example_of_use');
+            $table->longText('example_of_use')->nullable();
             $table->longText('sources')->nullable();
             $table->integer('arousal_level')->nullable();
             $table->integer('frequency_id')->nullable();
