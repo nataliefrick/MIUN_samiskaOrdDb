@@ -24,12 +24,23 @@ class WordsSeeder extends Seeder
 
     //public function importWords() {
         // array of data
-        // id, 'word_sydsamiska', 'definition_sydsamiska','word_svenska','definition_svenska','synonyms','antonyms','example_of_use'        'link_to_update','sources','arousal_level','frequency_id'
+        // 0 'word_sydsamiska',
+        // 1 'definition_sydsamiska',
+        // 2 'word_svenska',
+        // 3 'definition_svenska',
+        // 4 'word_norska',
+        // 5 'definition_norska',
+        // 6 'synonyms',
+        // 7 'antonyms',
+        // 8 'example_of_use',
+        // 9 'sources',
+        // 10 'arousal_level',
+        // 11 'frequency_id'
+
         $array = [
-            ["muohtastáluid", "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>","snögubbar", "<p>Description for the swedish word snowman.</p>", "snö", "snö", "<p>Dahkat muohtastáluid. (Göra snögubbar.)</p>", "#", "<p>Authors,etal. 'journal_name'. publish year</p>", 0, 0 ],
-            ["muohta", "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>", "snö", "<p>Description for the swedish word snow.</p>", "snö", "snö", "<p>Lei nu ollu muohta ahte uksa ii báljo rahpasan. (Det var så mycket snö att dörren nästan inte gick att öppna.)</p>", "#", "<p>Authors,etal. 'journal_name'. publish year</p>", 0, 0 ],
-            ["mohtorgielká", "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>","snöskoter", "<p>Description for the swedish word snowmobile.</p>", "snö", "snö", "<p>Ođđa mohtorgielká. (En ny snöskoter.)</p>", "#", "<p>Authors,etal. 'journal_name'. publish year</p>", 0, 0 ],
-            ["dálki", "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>", "väder","<p>Description for the swedish word weather.</p>", "snö", "snö", "<p>Hei dán dálkki! (Vilket dåligt väder!)</p>", "#", "<p>Authors,etal. 'journal_name'. publish year</p>", 0, 0 ]
+            ["aavone", null,"lycklig ", "att vara lycklig, varm och glad", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            ["hïelkes", null, "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            ["girmes", null, "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
         ];
 
         foreach($array as $key => $value) : 
@@ -38,13 +49,14 @@ class WordsSeeder extends Seeder
                 'definition_sydsamiska' => $value[1],
                 'word_svenska' => $value[2],
                 'definition_svenska' => $value[3],
-                'synonyms' => $value[4],
-                'antonyms' => $value[5],
-                'example_of_use' => $value[6],
-                'link_to_update' => $value[7],
-                'sources' => $value[8],
-                'arousal_level' => $value[9],
-                'frequency_id' => $value[10],
+                'word_norska' => $value[4],
+                'definition_norska' => $value[5],
+                'synonyms' => $value[6],
+                'antonyms' => $value[7],
+                'example_of_use' => $value[8],
+                'sources' => $value[9],
+                'arousal_level' => $value[10],
+                'frequency_id' => $value[11],
 
 
                 'created_at'  => Carbon::now()->toDateTimeString(),

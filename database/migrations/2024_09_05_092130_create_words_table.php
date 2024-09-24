@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('words', function (Blueprint $table) {
             $table->id();
-            $table->string('word_sydsamiska');
-            $table->longText('definition_sydsamiska');
-            $table->string('word_svenska');
-            $table->longText('definition_svenska');
+            $table->string('word_sydsamiska')->nullable();
+            $table->longText('definition_sydsamiska')->nullable();
+            $table->string('word_svenska')->nullable();
+            $table->longText('definition_svenska')->nullable();
+            $table->string('word_norska')->nullable();
+            $table->longText('definition_norska')->nullable();
             $table->text('synonyms')->nullable(); //list of synonyms
             $table->text('antonyms')->nullable(); //list of synonyms
             $table->longText('example_of_use');
-            $table->longText('link_to_update');
             $table->longText('sources')->nullable();
             $table->integer('arousal_level')->nullable();
             $table->integer('frequency_id')->nullable();
