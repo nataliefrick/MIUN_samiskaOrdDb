@@ -1,10 +1,15 @@
-@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
-#@hostname= http://localhost:8000/api
+#@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
+@hostname= http://localhost:8000/api
 #@token=11|X3am8DA0m7iCbYmuN8smb33LOGu64BXAXELAHejG
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
 GET {{hostname}}/words
+
+###
+
+
+GET {{hostname}}/words/search/g
 
 ###
 

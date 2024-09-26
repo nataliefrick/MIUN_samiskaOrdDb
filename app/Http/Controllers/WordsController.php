@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Words;
+use DB;
 
 class WordsController extends Controller
 {
@@ -47,10 +48,30 @@ class WordsController extends Controller
             return $word;
         } else {
             return response()->json([
-                'Ordet hittades inte i databasen.'
+                'show - Ordet hittades inte i databasen.'
             ], 404);
         }
     }
+
+    public function searchText($searchTerm) {
+        // return response()->json([
+        //     'searching for ' . $searchTerm
+        // ], 404);
+
+        // $words = Words::where('word_sydsamiska', 'like',  '%' . $searchTerm . '%')->get(); //works
+
+
+        $words = Words::where(DB::raw('LOWER(word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_svenska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_norska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(synonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(antonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->get();
+                
+        if ($words == null) {
+            return response()->json([
+                'No item matching this search term was found.'
+            ], 404);
+        }
+
+        return $words;
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -63,7 +84,7 @@ class WordsController extends Controller
            return $word;
         } else {
             return response()->json([
-                'Ordet hittades inte i databasen.'
+                'update - Ordet hittades inte i databasen.'
             ], 404);
         }
     }
@@ -81,7 +102,7 @@ class WordsController extends Controller
             ]);
         } else {
             return response()->json([
-                'Ordet hittades inte i databasen.'
+                'destroy - Ordet hittades inte i databasen.'
             ], 404);
         }
     }

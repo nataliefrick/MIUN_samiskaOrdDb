@@ -17,7 +17,7 @@ use App\Http\Controllers\WordsController;
 */
 
 Route::resource('words', WordsController::class);
-
+Route::get('words/search/{searchTerm}', [WordsController::class, 'searchText']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
