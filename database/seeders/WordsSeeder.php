@@ -38,13 +38,13 @@ class WordsSeeder extends Seeder
         // 11 'frequency_id'
 
         $array = [
-            ["aavone", null,"lycklig ", "att vara lycklig, varm och glad", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["hïelkes", null, "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["girmes", null, "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            // ["aavone", null,"lycklig ", "att vara lycklig, varm och glad", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            // ["hïelkes", null, "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            // ["girmes", null, "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", null, null, null, null, null, "Authors,etal. 'journal_name'. publish year", 0, 0 ],
             
-            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig ", "att vara lycklig, varm och glad", "norsk-ord", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "norsk-ord", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "norsk-ord", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0 ],
+            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig ", "att vara lycklig, varm och glad", "perspiciatis", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "perspiciatis", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
+            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "perspiciatis", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0 ],
             
         ];
 
