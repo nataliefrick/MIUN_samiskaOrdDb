@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -35,7 +34,7 @@ class WordsController extends Controller
             'arousal_level',
             'frequency_id'
         ]);
-        return Area::create($request->all());
+        return Words::create($request->all());
     }
 
     /**

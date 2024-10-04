@@ -4,7 +4,23 @@
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
-GET {{hostname}}/words
+GET {{hostname}}/changes
+
+###
+
+POST {{hostname}}/changes
+Content-Type: application/json
+
+{
+    "word_id": 3,
+    "message": "this is a test",
+    "name": "Natalie", 
+    "email": "natalie@mbp.se",
+    "telephone": "0730 56 79 67",
+    "status": null,
+    "checked_by": null
+}
+
 
 ###
 
@@ -13,11 +29,6 @@ GET {{hostname}}/words/search/g
 
 ###
 
-POST {{hostname}}/user Content-Type: application/json
-
-{
-"name" : "Natalie", "email" : "natalie@mbp.se", "password" : "password"
-}
 
 
 
