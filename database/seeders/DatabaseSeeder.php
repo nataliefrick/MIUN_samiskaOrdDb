@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // call the function to fill the tables with data        
-        $this ->call(WordsSeeder::class); 
+        $this ->call(WordsSeeder::class);
+        $this ->call(UsersSeeder::class); 
 
         
         // \App\Models\User::factory(10)->create();
@@ -24,3 +25,5 @@ class DatabaseSeeder extends Seeder
         // ]);
     }
 }
+
+       
