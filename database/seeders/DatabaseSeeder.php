@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         // call the function to fill the tables with data        
         $this ->call(WordsSeeder::class);
         $this ->call(UsersSeeder::class); 
+        $this ->call(DownloadsSeeder::class); 
 
         
         // \App\Models\User::factory(10)->create();

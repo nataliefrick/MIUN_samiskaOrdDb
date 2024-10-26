@@ -47,7 +47,7 @@ class WordsController extends Controller
             return $word;
         } else {
             return response()->json([
-                'show - Ordet hittades inte i databasen.'
+                'No item matching this search term was found.'
             ], 404);
         }
     }
@@ -83,7 +83,7 @@ class WordsController extends Controller
            return $word;
         } else {
             return response()->json([
-                'update - Ordet hittades inte i databasen.'
+                'No item matching this search term was found.'
             ], 404);
         }
     }
@@ -97,11 +97,11 @@ class WordsController extends Controller
         if($word != null) {
            $word->delete();
            return response()->json([
-            'Ordet raderade.'
+            'Data deleted.'
             ]);
         } else {
             return response()->json([
-                'destroy - Ordet hittades inte i databasen.'
+                'No item matching this search term was found.'
             ], 404);
         }
     }

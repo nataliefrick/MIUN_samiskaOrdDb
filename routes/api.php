@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WordsController;
 use App\Http\Controllers\ChangesController;
+use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -21,7 +22,8 @@ use App\Http\Controllers\AuthController;
 Route::resource('words', WordsController::class);
 Route::get('words/search/{searchTerm}', [WordsController::class, 'searchText']);
 
-Route::resource('changes', ChangesController::class);
+Route::resource('changes', ChangesController::class); // Adds all suggested changes to data
+Route::resource('downloads', DownloadsController::class); //Adds all registered downloads
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);

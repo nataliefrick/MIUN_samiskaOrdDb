@@ -4,7 +4,23 @@
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
-GET {{hostname}}/changes
+GET {{hostname}}/downloads
+
+###
+
+POST {{hostname}}/downloads
+Content-Type: application/json
+
+{
+        "name" : "Natalie Frick",
+        "title" : "Programmer",
+        "institution" : "Mid Sweden University",
+        "email" : "Natalie@mail.com",
+        "telephone" : "0730-12 34 56",
+        "projectTitle" : "Testing the database",
+        "description" : "This project is just a test of the database and the downloaded data will not be published.",
+        "searchTerm" : "lycklig"
+}
 
 ###
 
