@@ -24,6 +24,13 @@ Content-Type: application/json
 
 ###
 
+GET {{hostname}}/changes
+Content-Type: application/json
+
+
+
+###
+
 POST {{hostname}}/changes
 Content-Type: application/json
 
@@ -35,6 +42,44 @@ Content-Type: application/json
     "telephone": "0730 56 79 67",
     "status": null,
     "checked_by": null
+}
+
+
+###
+
+PUT {{hostname}}/changes/5
+Content-Type: application/json
+
+{
+    "word_id": 3,
+    "message": "this is a test",
+    "name": "Natalie", 
+    "email": "natalie@mbp.se",
+    "telephone": "0730 56 79 67",
+    "status": "just testing",
+    "checked_by": "Natalie"
+}
+
+
+###
+
+
+
+POST {{hostname}}/words
+Content-Type: application/json
+{
+  "word_sydsamiska":"new swedish word", 
+  "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+  "word_svenska":"lycklig", 
+  "definition_svenska":"att vara lycklig, varm och glad", 
+  "word_norska":"perspiciatis", 
+  "definition_norska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", 
+  "synonyms":"perspiciatis, unde omnis, iste natus error", 
+  "antonyms":"perspiciatis, unde omnis, iste natus error", 
+  "example_of_use":"this is an example of use", 
+  "sources":"Authors,etal. 'journal_name'. publish year", 
+  "arousal_level":0, 
+  "frequency_id":0
 }
 
 

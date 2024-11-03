@@ -74,16 +74,49 @@ class ChangesController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // dd($request);
+
+        // Validate the incoming request
+        $validatedData = $request->validate([
+            'word_id' => 'exists:words,id',
+            'message' => 'string|max:255',
+            'name' => 'string|max:50|nullable',
+            'email' => 'email|max:50|nullable',
+            'telephone' => 'string|max:15|nullable',
+            'status' => 'string|max:255|nullable',
+            'checked_by' => 'string|max:50|nullable',
+        ]);
+
         $change = Changes::find($id);
         if($change != null) {
-           $change->update($request->all());
-           return $change;
+        //    $change->update($request->all());
+        
+        // update the change record
+        $change->fill($validatedData);
+        
+        // Check if data is changing
+        if ($change->isDirty()) {
+            $change->save();
+            
+            return response()->json([
+                'message' => 'Change updated successfully',
+                'data' => $change,
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'No changes made to the change record.',
+            'data' => $change,
+    
+        ]);
         } else {
             return response()->json([
                 'No item matching this search term was found.'
             ], 404);
         }
     }
+
+    
 
     /**
      * Remove the specified resource from storage.
@@ -102,4 +135,42 @@ class ChangesController extends Controller
             ], 404);
         }
     }
+
+    /**
+     * Update specific fields of a change.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function patch(Request $request, $id)
+        {
+            // Find the change record by ID
+            $change = Change::find($id);
+
+            if (!$change) {
+                return response()->json(['error' => 'Change not found.'], 404);
+            }
+
+            // Validate only the fields that are sent in the request
+            $validatedData = $request->validate([
+                'word_id' => 'exists:words,id',
+                'message' => 'string|max:255',
+                'name' => 'string|max:50|nullable',
+                'email' => 'email|max:50|nullable',
+                'telephone' => 'string|max:15|nullable',
+                'status' => 'integer|nullable',
+                'checked_by' => 'string|max:50|nullable'
+            ]);
+
+            // Update only the fields that were provided in the request
+            $change->fill($validatedData);
+            $change->save();
+
+            return response()->json([
+                'message' => 'Change updated successfully',
+                'data' => $change,
+            ]);
+        }
+
 }

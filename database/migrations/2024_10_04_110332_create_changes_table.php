@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('telephone')->nullable();
-            $table->integer('status')->nullable(); 
-            $table->integer('checked_by')->nullable();/* foreign key - user table*/
+            $table->longText('status')->nullable(); 
+            $table->longText('checked_by')->nullable();/* foreign key - user table*/
             $table->timestamps();
         });
     }
