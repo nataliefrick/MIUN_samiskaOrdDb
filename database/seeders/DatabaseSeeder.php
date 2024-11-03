@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this ->call(WordsSeeder::class);
         $this ->call(UsersSeeder::class); 
         $this ->call(DownloadsSeeder::class); 
+        $this ->call(ChangesSeeder::class); 
 
         
         // \App\Models\User::factory(10)->create();

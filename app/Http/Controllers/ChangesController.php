@@ -13,7 +13,26 @@ class ChangesController extends Controller
     public function index()
     {
         // return all from database
-        return Changes::all();
+        // return Changes::all();
+        // $changes = Changes::with('words')->get();
+        $changes = Changes::join('words', 'words.id', '=', 'changes.word_id')
+        ->get([
+            'changes.id',
+            'changes.word_id',
+            'words.word_sydsamiska',
+            'changes.message',
+            'changes.name',
+            'changes.email',
+            'changes.telephone',
+            'changes.status',
+            'changes.checked_by',
+            'changes.created_at',
+            'changes.updated_at'
+            ]);
+
+        // return $data;
+
+        return response()->json($changes);
     }
 
     /**
@@ -39,15 +58,31 @@ class ChangesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $change = Changes::find($id);
+        if($change != null) {
+            return $change;
+        } else {
+            return response()->json([
+                'No item matching this search term was found.'
+            ], 404);
+        }
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $change = Changes::find($id);
+        if($change != null) {
+           $change->update($request->all());
+           return $change;
+        } else {
+            return response()->json([
+                'No item matching this search term was found.'
+            ], 404);
+        }
     }
 
     /**
@@ -55,6 +90,16 @@ class ChangesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $change = Changes::find($id);
+        if($change != null) {
+           $change->delete();
+           return response()->json([
+            'Data deleted.'
+            ]);
+        } else {
+            return response()->json([
+                'No item matching this search term was found.'
+            ], 404);
+        }
     }
 }

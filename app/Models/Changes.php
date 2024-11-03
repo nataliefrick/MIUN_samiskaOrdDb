@@ -17,4 +17,9 @@ class Changes extends Model
         'status',
         'checked_by'
     ];
+
+    public function words()
+    {
+        return $this->belongsTo(Words::class);
+    }
 }

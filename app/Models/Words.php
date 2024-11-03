@@ -22,4 +22,9 @@ class Words extends Model
         'arousal_level',
         'frequency_id'
     ];
+
+    public function changes()
+    {
+        return $this->hasMany(Changes::class);
+    }
 }

@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('changes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('word_id');
-            // ->constrained('words')->onDelete('cascade');   /* foreign key - word table*/
+            $table->foreignId('word_id')
+                  ->constrained('words')  // Bind to the words table
+                  ->onDelete('cascade');   // Delete changes if the word is deleted
             $table->longText('message');   
             $table->string('name')->nullable();
             $table->string('email')->nullable();
