@@ -24,76 +24,76 @@ class ChangesSeeder extends Seeder
 
         $array = [
             [
-                'word_id' => 1,  // Assuming word with ID 1 is 'aasku'
-                'message' => 'Updated the definition of "aasku" to better reflect its meaning in modern context.',
-                'name' => 'Alice Johnson',
-                'email' => 'alice.johnson@techsolutions.com',
-                'telephone' => '+123456789',
-                'status' => null,
-                'checked_by' => null,
+                1,  // Assuming word with ID 1 is 'aasku'
+                'Updated the definition of "aasku" to better reflect its meaning in modern context.',
+                'Alice Johnson',
+                'alice.johnson@techsolutions.com',
+                '+123456789',
+                null,
+                null,
             ],
             [
-                'word_id' => 2,  // Assuming word with ID 2 is 'báhko'
-                'message' => 'Corrected the spelling and added a more detailed example of usage for "báhko".',
-                'name' => 'Bob Smith',
-                'email' => 'bob.smith@greenenergy.com',
-                'telephone' => '+987654321',
-                'status' => null,
-                'checked_by' => null,
+                2,  // Assuming word with ID 2 is 'báhko'
+                'Corrected the spelling and added a more detailed example of usage for "báhko".',
+                'Bob Smith',
+                'bob.smith@greenenergy.com',
+                '+987654321',
+                null,
+                null,
             ],
             [
-                'word_id' => 3,  // Assuming word with ID 3 is 'guovssu'
-                'message' => 'Revised the definition to clarify the distinction between "guovssu" and similar words in other languages.',
-                'name' => 'Charlie Brown',
-                'email' => 'charlie.brown@futuretechlabs.com',
-                'telephone' => '+112233445',
-                'status' => null,
-                'checked_by' => null,
+                3,  // Assuming word with ID 3 is 'guovssu'
+                'Revised the definition to clarify the distinction between "guovssu" and similar words in other languages.',
+                'Charlie Brown',
+                'charlie.brown@futuretechlabs.com',
+                '+112233445',
+                null,
+                null,
             ],
             [
-                'word_id' => 4,  // Assuming word with ID 4 is 'ludna'
-                'message' => 'Added synonym "plagg" and updated example sentence to include more context about the term "ludna".',
-                'name' => 'Diana Ross',
-                'email' => 'diana.ross@creativeinnovations.com',
-                'telephone' => '+223344556',
-                'status' => null,
-                'checked_by' => null,
+                4,  // Assuming word with ID 4 is 'ludna'
+                'Added synonym "plagg" and updated example sentence to include more context about the term "ludna".',
+                'Diana Ross',
+                'diana.ross@creativeinnovations.com',
+                '+223344556',
+                null,
+                null,
             ],
             [
-                'word_id' => 5,  // Assuming word with ID 5 is 'jåvke'
-                'message' => 'Updated the example of use for "jåvke" to include a clearer description of the bird species.',
-                'name' => 'Evan Green',
-                'email' => 'evan.green@healthtechsolutions.com',
-                'telephone' => '+334455667',
-                'status' => null,
-                'checked_by' => null,
+                5,  // Assuming word with ID 5 is 'jåvke'
+                'Updated the example of use for "jåvke" to include a clearer description of the bird species.',
+                'Evan Green',
+                'evan.green@healthtechsolutions.com',
+                '+334455667',
+                null,
+                null,
             ],
             [
-                'word_id' => 6,  // Assuming word with ID 6 is 'ludna'
-                'message' => 'Fixed a typo in the definition of "ludna" and clarified the relationship with its Norwegian counterpart.',
-                'name' => 'Fiona White',
-                'email' => 'fiona.white@creativeinnovations.com',
-                'telephone' => '+998877665',
-                'status' => null,
-                'checked_by' => null,
+                6,  // Assuming word with ID 6 is 'ludna'
+                'Fixed a typo in the definition of "ludna" and clarified the relationship with its Norwegian counterpart.',
+                'Fiona White',
+                'fiona.white@creativeinnovations.com',
+                '+998877665',
+                null,
+                null,
             ],
             [
-                'word_id' => 7,  // Assuming word with ID 7 is 'jåvke'
-                'message' => 'Enhanced the "jåvke" definition by including a comparison to other types of birds in Sami culture.',
-                'name' => 'George Miller',
-                'email' => 'george.miller@culturalresearch.org',
-                'telephone' => '+123987654',
-                'status' => null,
-                'checked_by' => null,
+                7,  // Assuming word with ID 7 is 'jåvke'
+                'Enhanced the "jåvke" definition by including a comparison to other types of birds in Sami culture.',
+                'George Miller',
+                'george.miller@culturalresearch.org',
+                '+123987654',
+                null,
+                null,
             ],
             [
-                'word_id' => 8,  // Assuming word with ID 8 is 'báhko'
-                'message' => 'Revised the pronunciation guide for "báhko" and added a few related synonyms to the entry.',
-                'name' => 'Hannah Clark',
-                'email' => 'hannah.clark@samidictionary.org',
-                'telephone' => '+345678901',
-                'status' => null,
-                'checked_by' => null,
+                8,  // Assuming word with ID 8 is 'báhko'
+                'Revised the pronunciation guide for "báhko" and added a few related synonyms to the entry.',
+                'Hannah Clark',
+                'hannah.clark@samidictionary.org',
+                '+345678901',
+                null,
+                null,
             ]
         ];
 
