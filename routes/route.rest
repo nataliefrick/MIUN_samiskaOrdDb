@@ -4,7 +4,7 @@
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
-GET {{hostname}}/downloads
+GET {{hostname}}/words/latest
 
 ###
 

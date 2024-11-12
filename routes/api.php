@@ -20,7 +20,9 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::resource('words', WordsController::class);
+Route::get('words/latest', [WordsController::class, 'getLastThreeEntries']);
 Route::get('words/search/{searchTerm}', [WordsController::class, 'searchText']);
+Route::get('words/filter/{searchTerm}', [WordsController::class, 'filterText']);
 
 Route::resource('changes', ChangesController::class); // Adds all suggested changes to data
 Route::resource('downloads', DownloadsController::class); //Adds all registered downloads

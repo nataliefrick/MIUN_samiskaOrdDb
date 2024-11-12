@@ -52,13 +52,29 @@ class WordsController extends Controller
         }
     }
 
+    public function getLastThreeEntries()
+    {
+        // Fetch the last 3 entries by order of creation date
+        $lastThreeEntries = Words::orderBy('created_at', 'desc')->take(3)->get();
+
+        // Return the entries as a JSON response
+        return response()->json($lastThreeEntries);
+    }
+
+    public function filterText($searchTerm) {
+
+        $words = Words::where(DB::raw('LOWER(word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_svenska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_norska)'), 'like',  '%' . strtolower($searchTerm) . '%')->get();
+                
+        if ($words == null) {
+            return response()->json([
+                'No item matching this search term was found.'
+            ], 404);
+        }
+
+        return $words;
+    }
+
     public function searchText($searchTerm) {
-        // return response()->json([
-        //     'searching for ' . $searchTerm
-        // ], 404);
-
-        // $words = Words::where('word_sydsamiska', 'like',  '%' . $searchTerm . '%')->get(); //works
-
 
         $words = Words::where(DB::raw('LOWER(word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_svenska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_norska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(synonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(antonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->get();
                 
