@@ -47,7 +47,7 @@ class WordsController extends Controller
             return $word;
         } else {
             return response()->json([
-                'No item matching this search term was found.'
+                'show No item matching this search term was found.'
             ], 404);
         }
     }
@@ -67,7 +67,7 @@ class WordsController extends Controller
                 
         if ($words == null) {
             return response()->json([
-                'No item matching this search term was found.'
+                'filtertext No item matching this search term was found.'
             ], 404);
         }
 
@@ -80,7 +80,7 @@ class WordsController extends Controller
                 
         if ($words == null) {
             return response()->json([
-                'No item matching this search term was found.'
+                'searchtext No item matching this search term was found.'
             ], 404);
         }
 
@@ -99,7 +99,7 @@ class WordsController extends Controller
            return $word;
         } else {
             return response()->json([
-                'No item matching this search term was found.'
+                'update No item matching this search term was found.'
             ], 404);
         }
     }
@@ -117,7 +117,7 @@ class WordsController extends Controller
             ]);
         } else {
             return response()->json([
-                'No item matching this search term was found.'
+                'destroy No item matching this search term was found.'
             ], 404);
         }
     }

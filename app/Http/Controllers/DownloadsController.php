@@ -17,6 +17,15 @@ class DownloadsController extends Controller
         return Downloads::all();
     }
 
+    public function getLastThreeEntries()
+    {
+        // Fetch the last 3 entries by order of creation date
+        $lastThreeEntries = Downloads::orderBy('created_at', 'desc')->take(3)->get();
+
+        // Return the entries as a JSON response
+        return response()->json($lastThreeEntries);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -49,6 +58,26 @@ class DownloadsController extends Controller
                 'No item matching this search term was found.'
             ], 404);
         }
+    }
+
+    public function filterText($searchTerm) {
+
+        $downloads = Downloads::where(DB::raw('LOWER(name)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(title)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(institution)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(projectTitle)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(description)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(searchTerm)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(notes)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->get();
+                
+        if ($downloads == null) {
+            return response()->json([
+                'filtertext No item matching this search term was found.'
+            ], 404);
+        }
+
+        return $downloads;
     }
 
         /**

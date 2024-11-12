@@ -4,7 +4,7 @@
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
-GET {{hostname}}/words/latest
+GET {{hostname}}/changes/latest
 
 ###
 
@@ -86,7 +86,8 @@ Content-Type: application/json
 ###
 
 
-GET {{hostname}}/words/search/g
+GET {{hostname}}/downloads/filter/sami
+# GET {{hostname}}/changes/search/g
 
 ###
 

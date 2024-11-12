@@ -35,6 +35,30 @@ class ChangesController extends Controller
         return response()->json($changes);
     }
 
+    public function getLastThreeEntries()
+    {
+        // Fetch the last 3 entries by order of creation date
+        $lastThreeEntries = Changes::join('words', 'words.id', '=', 'changes.word_id')
+        ->orderBy('changes.created_at', 'desc')
+        ->take(3)
+        ->get([
+            'changes.id',
+            'changes.word_id',
+            'words.word_sydsamiska',
+            'changes.message',
+            'changes.name',
+            'changes.email',
+            'changes.telephone',
+            'changes.status',
+            'changes.checked_by',
+            'changes.created_at',
+            'changes.updated_at'
+        ]);
+
+        // Return the entries as a JSON response
+        return response()->json($lastThreeEntries);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -63,11 +87,39 @@ class ChangesController extends Controller
             return $change;
         } else {
             return response()->json([
-                'No item matching this search term was found.'
+                'show: No item matching this search term was found.'
             ], 404);
         }
     }
 
+    public function filterText($searchTerm) {
+        $changes = Changes::join('words', 'words.id', '=', 'changes.word_id')
+        ->where(DB::raw('LOWER(words.word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(changes.message)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->orWhere(DB::raw('LOWER(changes.name)'), 'like',  '%' . strtolower($searchTerm) . '%')
+        ->take(3)
+        ->get([
+            'changes.id',
+            'changes.word_id',
+            'words.word_sydsamiska',
+            'changes.message',
+            'changes.name',
+            'changes.email',
+            'changes.telephone',
+            'changes.status',
+            'changes.checked_by',
+            'changes.created_at',
+            'changes.updated_at'
+        ]);
+                  
+        if ($changes == null) {
+            return response()->json([
+                'filter: No item matching this search term was found.'
+            ], 404);
+        }
+
+        return $changes;
+    }
 
     /**
      * Update the specified resource in storage.
