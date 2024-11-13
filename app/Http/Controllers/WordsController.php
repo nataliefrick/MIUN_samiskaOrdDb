@@ -55,7 +55,7 @@ class WordsController extends Controller
     public function getLastThreeEntries()
     {
         // Fetch the last 3 entries by order of creation date
-        $lastThreeEntries = Words::orderBy('created_at', 'desc')->take(3)->get();
+        $lastThreeEntries = Words::orderByRaw('GREATEST(created_at, updated_at) DESC')->take(3)->get();
 
         // Return the entries as a JSON response
         return response()->json($lastThreeEntries);
