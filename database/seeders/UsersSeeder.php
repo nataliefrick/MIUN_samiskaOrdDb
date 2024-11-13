@@ -27,7 +27,10 @@ class UsersSeeder extends Seeder
     // public function importUsers() {
         // array of data
         $array = [
-            ['Natalie', 'natalie@mail.com', Hash::make('password') ],
+    ['Natalie', 'natalie@mail.com', Hash::make('password') ],
+    ['Gäst', 'guest@mail.com', Hash::make('MIUN-sseid-2024') ],
+    ['Marie-France', 'marie-france.champoux-larsson@miun.se', Hash::make('MIUN-sseid-2024') ],
+    ['Anna', 'anna.leiler@miun.se', Hash::make('MIUN-sseid-2024') ],
             
         ];
 
