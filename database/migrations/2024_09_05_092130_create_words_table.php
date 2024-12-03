@@ -24,13 +24,13 @@ return new class extends Migration
             $table->longText('example_of_use')->nullable();
             $table->longText('sources')->nullable();
             $table->integer('arousal_level')->nullable();
-            $table->integer('frequency_id')->nullable();
-            // $table->foreignId('frequency');
+            $table->integer('frequency')->nullable();
+            $table->foreignId('node_id')->nullable()->constrained('nodes')->nullOnDelete();  // Bind to the nodes table ->default(false)
+            $table->longText('expression')->nullable();
             $table->timestamps();
             
-            // $table->boolean('test_generated')->default(false);
-            // $table->integer('result')->default(0);
-            // $table->longText('certificate')->nullable();
+            // Foreign key constraint
+            // $table->foreign('node_id')->references('id')->on('nodes')->onDelete('cascade');
         });
     }
 

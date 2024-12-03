@@ -53,7 +53,7 @@ class WordsSeeder extends Seeder
                 'Jag tycker om att göra en lång vandring i skogen på helgerna.',
                 'Samisk ordbok, Svenska Akademiens ordlista',
                 2,
-                3
+                3, 1, "uttryck - expression"
             ],
             [
                 'báhko',
@@ -67,7 +67,7 @@ class WordsSeeder extends Seeder
                 'Han plockade upp sin båge och förberedde sig för jakt.',
                 'Samisk ordbok, Nordiska ordboken',
                 3,
-                2
+                2, 2, "uttryck - expression"
             ],
             [
                 'guovssu',
@@ -81,7 +81,7 @@ class WordsSeeder extends Seeder
                 'Det var mycket snö på marken och vinden blåste hårt.',
                 'Samisk ordbok, Svenska akademins ordlista',
                 1,
-                1
+                1, 4, "uttryck - expression"
             ],
             [
                 'ludna',
@@ -95,7 +95,7 @@ class WordsSeeder extends Seeder
                 'Han klädde sig i sina tjocka kläder för att stå emot kylan.',
                 'Samisk ordbok',
                 1,
-                2
+                2, 2, "uttryck - expression"
             ],
             [
                 'jåvke',
@@ -109,11 +109,11 @@ class WordsSeeder extends Seeder
                 'Fågeln flög iväg i den kalla morgonluften.',
                 'Samisk ordbok',
                 3,
-                3
+                3, 1, "uttryck - expression"
             ],
-            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig", "att vara lycklig, varm och glad", "lykkelig", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "nervøs", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0 ],
-            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "glad", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0 ],
+            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig", "att vara lycklig, varm och glad", "lykkelig", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, null, null ],
+            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "nervøs", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, null, null ],
+            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "glad", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0, 6, "uttryck - expression" ],
             
         ];
 
@@ -130,8 +130,9 @@ class WordsSeeder extends Seeder
                 'example_of_use' => $value[8],
                 'sources' => $value[9],
                 'arousal_level' => $value[10],
-                'frequency_id' => $value[11],
-
+                'frequency' => $value[11],
+                'node_id' => $value[12],
+                'expression' => $value[13],
 
                 'created_at'  => Carbon::now()->toDateTimeString(),
                 'updated_at'  => Carbon::now()->toDateTimeString()
@@ -141,3 +142,5 @@ class WordsSeeder extends Seeder
 
     }
 }
+
+

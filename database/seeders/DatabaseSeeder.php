@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // call the function to fill the tables with data        
+        $this ->call(NodesSeeder::class); 
         $this ->call(WordsSeeder::class);
         $this ->call(UsersSeeder::class); 
         $this ->call(DownloadsSeeder::class); 

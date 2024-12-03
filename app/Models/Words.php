@@ -20,9 +20,17 @@ class Words extends Model
         'example_of_use',
         'sources',
         'arousal_level',
-        'frequency_id'
+        'frequency',
+        'node_id',
+        'expression'
     ];
 
+    // Define the relationship to Nodes
+    public function nodes()
+    {
+        return $this->belongsTo(Nodes::class);
+    }
+    
     public function changes()
     {
         return $this->hasMany(Changes::class);

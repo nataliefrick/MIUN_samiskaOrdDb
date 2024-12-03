@@ -1,10 +1,11 @@
-@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
-#@hostname= http://localhost:8000/api
+#@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
+@hostname= http://localhost:8000/api
+#@hostname= http://127.0.0.1:8000/api
 #@token=11|X3am8DA0m7iCbYmuN8smb33LOGu64BXAXELAHejG
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
 
-GET {{hostname}}/changes/latest
+GET {{hostname}}/nodes/polarity/positiva
 
 ###
 
@@ -24,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-GET {{hostname}}/changes
+GET {{hostname}}/words/subnodes/1
 Content-Type: application/json
 
 
@@ -79,7 +80,7 @@ Content-Type: application/json
   "example_of_use":"this is an example of use", 
   "sources":"Authors,etal. 'journal_name'. publish year", 
   "arousal_level":0, 
-  "frequency_id":0
+  "frequency":0
 }
 
 

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WordsController;
+use App\Http\Controllers\NodesController;
 use App\Http\Controllers\ChangesController;
 use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\AuthController;
@@ -18,8 +19,11 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::get('nodes/polarity/{searchTerm}', [NodesController::class, 'getPolarityNodes']);
+Route::resource('nodes', NodesController::class);
 
 Route::get('words/latest', [WordsController::class, 'getLastThreeEntries']);
+Route::get('words/subnodes/{node}', [WordsController::class, 'searchNode']);
 Route::get('words/search/{searchTerm}', [WordsController::class, 'searchText']);
 Route::get('words/filter/{searchTerm}', [WordsController::class, 'filterText']);
 Route::resource('words', WordsController::class);

@@ -13,7 +13,35 @@ class WordsController extends Controller
     public function index()
     {
         // return all from database
-        return Words::all();
+        // return Words::all();
+
+        $words = Words::join('nodes', 'nodes.id', '=', 'words.node_id')
+        ->get([
+            'words.id',
+            'words.word_sydsamiska as word_sydsamiska',
+            'words.definition_sydsamiska as definition_sydsamiska',
+            'words.word_svenska as word_svenska',
+            'words.definition_svenska as definition_svenska',
+            'words.word_norska as word_norska',
+            'words.definition_norska as definition_norska',
+            'words.synonyms as synonyms',
+            'words.antonyms as antonyms',
+            'words.example_of_use as example_of_use',
+            'words.sources as sources',
+            'words.arousal_level as arousal_level',
+            'words.frequency as frequency',
+            'words.node_id',
+            'nodes.main_node',
+            'nodes.polarity_node',
+            'nodes.sub_node',
+            'words.expression',
+
+            'words.created_at as created_at',
+            'words.updated_at as updated_at'
+            ]);
+
+            return response()->json($words);
+
     }
 
     /**
@@ -32,7 +60,9 @@ class WordsController extends Controller
             'link_to_update',
             'sources',
             'arousal_level',
-            'frequency_id'
+            'frequency',
+            'node_id',
+            'expression'
         ]);
         return Words::create($request->all());
     }
@@ -76,7 +106,60 @@ class WordsController extends Controller
 
     public function searchText($searchTerm) {
 
-        $words = Words::where(DB::raw('LOWER(word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_svenska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_norska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(synonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(antonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->get();
+        $words = Words::join('nodes', 'nodes.id', '=', 'words.node_id')
+        ->where(function ($query) use ($searchTerm) {
+            $query->where(DB::raw('LOWER(word_sydsamiska)'), 'like', '%' . strtolower($searchTerm) . '%')
+                ->orWhere(DB::raw('LOWER(word_svenska)'), 'like', '%' . strtolower($searchTerm) . '%')
+                ->orWhere(DB::raw('LOWER(word_norska)'), 'like', '%' . strtolower($searchTerm) . '%')
+                ->orWhere(DB::raw('LOWER(synonyms)'), 'like', '%' . strtolower($searchTerm) . '%')
+                ->orWhere(DB::raw('LOWER(antonyms)'), 'like', '%' . strtolower($searchTerm) . '%');
+        })
+        ->get([
+            'words.id',
+            'words.word_sydsamiska as word_sydsamiska',
+            'words.definition_sydsamiska as definition_sydsamiska',
+            'words.word_svenska as word_svenska',
+            'words.definition_svenska as definition_svenska',
+            'words.word_norska as word_norska',
+            'words.definition_norska as definition_norska',
+            'words.synonyms as synonyms',
+            'words.antonyms as antonyms',
+            'words.example_of_use as example_of_use',
+            'words.sources as sources',
+            'words.arousal_level as arousal_level',
+            'words.frequency as frequency',
+            'words.node_id',
+            'nodes.main_node',
+            'nodes.polarity_node',
+            'nodes.sub_node',
+            'words.expression',
+            'words.created_at as created_at',
+            'words.updated_at as updated_at'
+        ]);
+
+    if ($words->isEmpty()) {
+        return response()->json([
+            'message' => 'No items matching this search term were found.'
+        ], 404);
+    }
+
+    return response()->json($words);
+
+
+        // $words = Words::where(DB::raw('LOWER(word_sydsamiska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_svenska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(word_norska)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(synonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->orWhere(DB::raw('LOWER(antonyms)'), 'like',  '%' . strtolower($searchTerm) . '%')->get();
+                
+        // if ($words == null) {
+        //     return response()->json([
+        //         'searchtext No item matching this search term was found.'
+        //     ], 404);
+        // }
+
+        // return $words;
+    }
+
+    public function searchNode($searchTerm) {
+     
+        $words = Words::where(DB::raw('node_id'), 'like',  $searchTerm )->get();
                 
         if ($words == null) {
             return response()->json([
