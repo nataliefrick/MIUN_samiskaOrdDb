@@ -27,6 +27,7 @@ return new class extends Migration
             $table->integer('frequency')->nullable();
             $table->foreignId('node_id')->nullable()->constrained('nodes')->nullOnDelete();  // Bind to the nodes table ->default(false)
             $table->longText('expression')->nullable();
+            $table->longText('translation')->nullable();
             $table->timestamps();
             
             // Foreign key constraint

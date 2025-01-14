@@ -22,7 +22,8 @@ class Words extends Model
         'arousal_level',
         'frequency',
         'node_id',
-        'expression'
+        'expression',
+        'translation'
     ];
 
     // Define the relationship to Nodes

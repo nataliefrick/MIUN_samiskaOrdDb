@@ -53,7 +53,9 @@ class WordsSeeder extends Seeder
                 'Jag tycker om att göra en lång vandring i skogen på helgerna.',
                 'Samisk ordbok, Svenska Akademiens ordlista',
                 2,
-                3, 1, "uttryck - expression"
+                3, 1, 
+                "Aasku jih aajmoe lea gusnie niehkuh ij goerkieh.",
+                "Desire and hope are where dreams have no limits."
             ],
             [
                 'báhko',
@@ -67,7 +69,9 @@ class WordsSeeder extends Seeder
                 'Han plockade upp sin båge och förberedde sig för jakt.',
                 'Samisk ordbok, Nordiska ordboken',
                 3,
-                2, 2, "uttryck - expression"
+                2, 2, 
+                "Báhko lea mov goerhtemegie biejedh.",
+                "The bone is the foundation of my strength."
             ],
             [
                 'guovssu',
@@ -81,7 +85,9 @@ class WordsSeeder extends Seeder
                 'Det var mycket snö på marken och vinden blåste hårt.',
                 'Samisk ordbok, Svenska akademins ordlista',
                 1,
-                1, 4, "uttryck - expression"
+                1, 4,
+                "Guovssu lea Almetjh nïejte, ovte tjaktjele aaj dïedtie.",
+                "The northern lights are the daughter of the people, dancing in the winter sky."
             ],
             [
                 'ludna',
@@ -95,7 +101,9 @@ class WordsSeeder extends Seeder
                 'Han klädde sig i sina tjocka kläder för att stå emot kylan.',
                 'Samisk ordbok',
                 1,
-                2, 2, "uttryck - expression"
+                2, 2,
+                "Ludna lea biejjien biejje-gïele.", 
+                "The song is the sun's voice."
             ],
             [
                 'jåvke',
@@ -109,11 +117,12 @@ class WordsSeeder extends Seeder
                 'Fågeln flög iväg i den kalla morgonluften.',
                 'Samisk ordbok',
                 3,
-                3, 1, "uttryck - expression"
+                3, 1, "Jåvke golkeme gusnie biejjie åadtjeme.", "The shadow follows where the sun shines."
+
             ],
-            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig", "att vara lycklig, varm och glad", "lykkelig", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, null, null ],
-            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "nervøs", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, null, null ],
-            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "glad", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0, 6, "uttryck - expression" ],
+            ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig", "att vara lycklig, varm och glad", "lykkelig", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, 1, "Aavone lea gusnie aejkie jih guvvie gaajhkedh.", "Hope is where courage and dreams meet." ],
+            ["hïelkes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "nervös", "att vara nervös, hysterisk, som lätt kan bringas ut av fattningen av plötsliga och oväntade händelser", "nervøs", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", null, "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, 6, "Hïelkes tjihkijægan sijhtem åarjelsavloe.", "In the frost, I hear the call of the southern wind." ],
+            ["girmes", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "glad", "att vara glad på ett 'skrytsamt sätt'. Irriterande glad; självgod", "glad", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", null, null, "this is an example of use", null, 0, 0, 6, "Girmes luvnie goerhkebe aejkien tjuvkes.", "In the mist lies the gentle whisper of hope." ],
             
         ];
 
