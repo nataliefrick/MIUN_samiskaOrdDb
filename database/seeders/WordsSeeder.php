@@ -65,7 +65,7 @@ class WordsSeeder extends Seeder
                 'bue',
                 'Et redskap for å skyte piler, brukt til jakt eller sport.',
                 'pilbåge, jaktbåge',
-                'inget',
+                null,
                 'Han plockade upp sin båge och förberedde sig för jakt.',
                 'Samisk ordbok, Nordiska ordboken',
                 3,
@@ -113,11 +113,14 @@ class WordsSeeder extends Seeder
                 'fugl',
                 'Et dyr som har fjær og kan fly.',
                 'fåglar, vingar, rovfåglar',
-                'inget',
+                null,
                 'Fågeln flög iväg i den kalla morgonluften.',
                 'Samisk ordbok',
                 3,
-                3, 1, "Jåvke golkeme gusnie biejjie åadtjeme.", "The shadow follows where the sun shines."
+                3, 
+                1, 
+                "Jåvke golkeme gusnie biejjie åadtjeme.", 
+                "The shadow follows where the sun shines."
 
             ],
             ["aavone", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium","lycklig", "att vara lycklig, varm och glad", "lykkelig", "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", "perspiciatis, unde omnis, iste natus error", "perspiciatis, unde omnis, iste natus error", "this is an example of use", "Authors,etal. 'journal_name'. publish year", 0, 0, 1, "Aavone lea gusnie aejkie jih guvvie gaajhkedh.", "Hope is where courage and dreams meet." ],
@@ -142,6 +145,7 @@ class WordsSeeder extends Seeder
                 'frequency' => $value[11],
                 'node_id' => $value[12],
                 'expression' => $value[13],
+                'translation' => $value[14],
 
                 'created_at'  => Carbon::now()->toDateTimeString(),
                 'updated_at'  => Carbon::now()->toDateTimeString()

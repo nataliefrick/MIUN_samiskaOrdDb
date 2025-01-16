@@ -35,6 +35,7 @@ class WordsController extends Controller
             'nodes.polarity_node',
             'nodes.sub_node',
             'words.expression',
+            'words.translation',
 
             'words.created_at as created_at',
             'words.updated_at as updated_at'
