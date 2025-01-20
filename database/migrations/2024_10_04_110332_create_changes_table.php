@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('word_id')
                   ->constrained('words')  // Bind to the words table
-                  ->onDelete('cascade');   // Delete changes if the word is deleted
+                  ->onDelete('cascade')->nullable();   // Delete changes if the word is deleted
             $table->longText('message');   
             $table->string('name')->nullable();
             $table->string('email')->nullable();
