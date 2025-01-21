@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-GET {{hostname}}/words/subnodes/1
+GET {{hostname}}/changes
 Content-Type: application/json
 
 

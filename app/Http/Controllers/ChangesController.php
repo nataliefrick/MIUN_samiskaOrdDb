@@ -15,7 +15,8 @@ class ChangesController extends Controller
         // return all from database
         // return Changes::all();
         // $changes = Changes::with('words')->get();
-        $changes = Changes::join('words', 'words.id', '=', 'changes.word_id')
+        $changes = Changes::leftJoin('words', 'words.id', '=', 'changes.word_id')
+        ->orderBy('changes.created_at', 'desc')
         ->get([
             'changes.id',
             'changes.word_id',
@@ -38,7 +39,7 @@ class ChangesController extends Controller
     public function getLastThreeEntries()
     {
         // Fetch the last 3 entries by order of creation date
-        $lastThreeEntries = Changes::join('words', 'words.id', '=', 'changes.word_id')
+        $lastThreeEntries = Changes::leftJoin('words', 'words.id', '=', 'changes.word_id')
         ->orderBy('changes.created_at', 'desc')
         ->take(3)
         ->get([
@@ -130,7 +131,7 @@ class ChangesController extends Controller
 
         // Validate the incoming request
         $validatedData = $request->validate([
-            'word_id' => 'exists:words,id',
+            'word_id' => 'nullable|exists:words,id',
             'message' => 'string|max:255',
             'name' => 'string|max:50|nullable',
             'email' => 'email|max:50|nullable',
