@@ -63,7 +63,8 @@ class WordsController extends Controller
             'arousal_level',
             'frequency',
             'node_id',
-            'expression'
+            'expression',
+            'translation'
         ]);
         return Words::create($request->all());
     }
@@ -134,6 +135,7 @@ class WordsController extends Controller
             'nodes.polarity_node',
             'nodes.sub_node',
             'words.expression',
+            'words.translation',
             'words.created_at as created_at',
             'words.updated_at as updated_at'
         ]);
