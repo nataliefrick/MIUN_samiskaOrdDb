@@ -4,8 +4,9 @@
 #@token=11|X3am8DA0m7iCbYmuN8smb33LOGu64BXAXELAHejG
 
 # Adding a new controller: make sure that the file is imported into the routes (api.php) file.
+#/nodes/polarity/positiva
 
-GET {{hostname}}/nodes/polarity/positiva
+GET {{hostname}}/downloads
 
 ###
 
@@ -68,20 +69,45 @@ Content-Type: application/json
 
 POST {{hostname}}/words
 Content-Type: application/json
+
 {
-  "word_sydsamiska":"new swedish word", 
-  "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+  "word_sydsamiska":"new swedish word 2", 
+   "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
   "word_svenska":"lycklig", 
-  "definition_svenska":"att vara lycklig, varm och glad", 
+  "definition_svenska": "att vara lycklig, varm och glad",
   "word_norska":"perspiciatis", 
-  "definition_norska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", 
-  "synonyms":"perspiciatis, unde omnis, iste natus error", 
-  "antonyms":"perspiciatis, unde omnis, iste natus error", 
-  "example_of_use":"this is an example of use", 
-  "sources":"Authors,etal. 'journal_name'. publish year", 
-  "arousal_level":0, 
-  "frequency":0
+   "definition_norska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", 
+   "synonyms":"perspiciatis, unde omnis, iste natus error", 
+   "antonyms":"perspiciatis, unde omnis, iste natus error", 
+   "example_of_use":"this is an example of use", 
+   "sources":"Authors,etal. 'journal_name'. publish year", 
+   "arousal_level":0, 
+   "frequency":0,
+   "node_id": 1,
+   "expression": "Aavone lea gusnie aejkie jih guvvie gaajhkedh.",
+   "translation": "Hope is where courage and dreams meet."
 }
+
+###
+
+{
+   "word_sydsamiska":"new swedish word 2", 
+   "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+   "word_svenska":"lycklig", 
+   "definition_svenska":"att vara lycklig, varm och glad", 
+   "word_norska":"perspiciatis", 
+   "definition_norska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", 
+   "synonyms":"perspiciatis, unde omnis, iste natus error", 
+   "antonyms":"perspiciatis, unde omnis, iste natus error", 
+   "example_of_use":"this is an example of use", 
+   "sources":"Authors,etal. 'journal_name'. publish year", 
+   "arousal_level":0, 
+   "frequency":0,
+   "node_id": 1,
+   "expression": "Aavone lea gusnie aejkie jih guvvie gaajhkedh.",
+   "translation": "Hope is where courage and dreams meet.",
+
+ }
 
 
 ###
@@ -92,6 +118,8 @@ GET {{hostname}}/words
 
 ###
 
+
+GET {{hostname}}/words/9
 
 
 

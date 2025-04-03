@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Words;
+use Illuminate\Support\Facades\Log;
 use DB;
 
 class WordsController extends Controller
@@ -50,21 +51,33 @@ class WordsController extends Controller
      */
     public function store(Request $request)
     {
+        // // Debugging: Output the request data
+        // try {
+        //     // Log::info('Request method:', ['method' => $request->method()]);
+        //     Log::info('Incoming Request:', $request->all());
+        //     return response()->json(['message' => 'Request received', 'data' => $request->all(), 'method' => $request->method()]);
+        // } catch (\Exception $e) {
+        //     Log::error('Error in store method: ' . $e->getMessage());
+        //     return response()->json(['error' => $e->getMessage()], 500);
+        // }
+
+
         $request ->validate([
-            'word_sydsamiska',
-            'definition_sydsamiska',
-            'word_svenska',
-            'definition_svenska',
-            'synonyms',
-            'antonyms',
-            'example_of_use',
-            'link_to_update',
-            'sources',
-            'arousal_level',
-            'frequency',
-            'node_id',
-            'expression',
-            'translation'
+            'word_sydsamiska' => 'nullable|string|max:255',
+            'definition_sydsamiska' => 'nullable|string',
+            'word_svenska' => 'nullable|string|max:255',
+            'definition_svenska' => 'nullable|string',
+            'word_norska' => 'nullable|string|max:255',
+            'definition_norska' => 'nullable|string',
+            'synonyms' => 'nullable|string', // Assuming list of synonyms as a string
+            'antonyms' => 'nullable|string', // Assuming list of antonyms as a string
+            'example_of_use' => 'nullable|string',
+            'sources' => 'nullable|string',
+            'arousal_level' => 'nullable|integer',
+            'frequency' => 'nullable|integer',
+            'node_id' => 'nullable|exists:nodes,id', // Ensures node_id exists in the nodes table
+            'expression' => 'nullable|string',
+            'translation' => 'nullable|string',
         ]);
         return Words::create($request->all());
     }
