@@ -93,7 +93,7 @@ class WordsController extends Controller
             // 'expression' => 'nullable|string',
             // 'translation' => 'nullable|string',
         ]);
-        $word = Word::create($request->all()); // Make sure this line exists
+        return  Word::create($request->all()); // Make sure this line exists
 
         //return response()->json($word, 201); // Not just this line without saving
     }
