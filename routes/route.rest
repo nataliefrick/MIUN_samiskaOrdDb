@@ -71,7 +71,7 @@ POST {{hostname}}/words
 Content-Type: application/json
 
 {
-  "word_sydsamiska":"new swedish word 2", 
+  "word_sydsamiska":"new swedish word 3", 
    "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
   "word_svenska":"lycklig", 
   "definition_svenska": "att vara lycklig, varm och glad",
@@ -91,7 +91,7 @@ Content-Type: application/json
 ###
 
 {
-   "word_sydsamiska":"new swedish word 2", 
+   "word_sydsamiska":"new swedish word 3", 
    "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
    "word_svenska":"lycklig", 
    "definition_svenska":"att vara lycklig, varm och glad", 
