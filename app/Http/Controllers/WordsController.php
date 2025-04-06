@@ -51,52 +51,22 @@ class WordsController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $validated = $request->validate([
-                'word_sydsamiska',
-                'definition_sydsamiska',
-                'word_svenska',
-                'definition_svenska',
-                'word_norska',
-                'definition_norska',
-                'synonyms',
-                'antonyms',
-                'example_of_use',
-                'sources',
-                'arousal_level',
-                'frequency',
-                'node_id',
-                'expression',
-                'translation'
-            ]);
-    
-            $word = Word::create($validated);
-    
-            return response()->json($word, 201);
-    
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => $e->getMessage()
-            ], 500);
-        }
-
-
-        // $request ->validate([
-        //     'word_sydsamiska',
-        //     'definition_sydsamiska',
-        //     'word_svenska',
-        //     'definition_svenska',
-        //     'word_norska',
-        //     'definition_norska',
-        //     'synonyms',
-        //     'antonyms',
-        //     'example_of_use',
-        //     'sources',
-        //     'arousal_level',
-        //     'frequency',
-        //     'node_id',
-        //     'expression',
-        //     'translation'
+        $request ->validate([
+            'word_sydsamiska',
+            'definition_sydsamiska',
+            'word_svenska',
+            'definition_svenska',
+            'word_norska',
+            'definition_norska',
+            'synonyms',
+            'antonyms',
+            'example_of_use',
+            'sources',
+            'arousal_level',
+            'frequency',
+            'node_id',
+            'expression',
+            'translation'
 
             // 'word_sydsamiska' => 'nullable|string|max:255',
             // 'definition_sydsamiska' => 'nullable|string',
@@ -113,8 +83,8 @@ class WordsController extends Controller
             // 'node_id' => 'nullable|exists:nodes,id', // Ensures node_id exists in the nodes table
             // 'expression' => 'nullable|string',
             // 'translation' => 'nullable|string',
-        // ]);
-        // return  Word::create($request->all()); // Make sure this line exists
+        ]);
+        return Words::create($request->all()); // Make sure this line exists
 
         //return response()->json($word, 201); // Not just this line without saving
     }
