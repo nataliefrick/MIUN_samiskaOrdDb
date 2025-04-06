@@ -90,34 +90,20 @@ Content-Type: application/json
 
 ###
 
-{
-   "word_sydsamiska":"new swedish word 3", 
-   "definition_sydsamiska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
-   "word_svenska":"lycklig", 
-   "definition_svenska":"att vara lycklig, varm och glad", 
-   "word_norska":"perspiciatis", 
-   "definition_norska":"ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", 
-   "synonyms":"perspiciatis, unde omnis, iste natus error", 
-   "antonyms":"perspiciatis, unde omnis, iste natus error", 
-   "example_of_use":"this is an example of use", 
-   "sources":"Authors,etal. 'journal_name'. publish year", 
-   "arousal_level":0, 
-   "frequency":0,
-   "node_id": 1,
-   "expression": "Aavone lea gusnie aejkie jih guvvie gaajhkedh.",
-   "translation": "Hope is where courage and dreams meet.",
 
- }
-
-
-###
-
-
-GET {{hostname}}/words
+GET {{hostname}}/nodes
 # GET {{hostname}}/changes/search/g
 
 ###
 
+POST {{hostname}}/nodes
+Content-Type: application/json
+
+{
+    "main_node": "känslor",
+    "polarity_node": "positiva",
+    "sub_node": "giddy",
+}
 
 GET {{hostname}}/words/19
 
