@@ -16,33 +16,32 @@ class WordsController extends Controller
         // return all from database
         // return Words::all();
 
-        $words = Words::join('nodes', 'nodes.id', '=', 'words.node_id')
+        $words = Words::leftJoin('nodes', 'nodes.id', '=', 'words.node_id')
         ->get([
             'words.id',
-            'words.word_sydsamiska as word_sydsamiska',
-            'words.definition_sydsamiska as definition_sydsamiska',
-            'words.word_svenska as word_svenska',
-            'words.definition_svenska as definition_svenska',
-            'words.word_norska as word_norska',
-            'words.definition_norska as definition_norska',
-            'words.synonyms as synonyms',
-            'words.antonyms as antonyms',
-            'words.example_of_use as example_of_use',
-            'words.sources as sources',
-            'words.arousal_level as arousal_level',
-            'words.frequency as frequency',
+            'words.word_sydsamiska',
+            'words.definition_sydsamiska',
+            'words.word_svenska',
+            'words.definition_svenska',
+            'words.word_norska',
+            'words.definition_norska',
+            'words.synonyms',
+            'words.antonyms',
+            'words.example_of_use',
+            'words.sources',
+            'words.arousal_level',
+            'words.frequency',
             'words.node_id',
             'nodes.main_node',
             'nodes.polarity_node',
             'nodes.sub_node',
             'words.expression',
             'words.translation',
-
-            'words.created_at as created_at',
-            'words.updated_at as updated_at'
-            ]);
-
-            return response()->json($words);
+            'words.created_at',
+            'words.updated_at'
+        ]);
+    
+        return response()->json($words);
 
     }
 

@@ -1,5 +1,5 @@
-#@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
-@hostname= http://localhost:8000/api
+@hostname= https://miun-sampi-database-96bc66384ce1.herokuapp.com/api 
+#@hostname= http://localhost:8000/api
 #@hostname= http://127.0.0.1:8000/api
 #@token=11|X3am8DA0m7iCbYmuN8smb33LOGu64BXAXELAHejG
 
@@ -119,7 +119,7 @@ GET {{hostname}}/words
 ###
 
 
-GET {{hostname}}/words/9
+GET {{hostname}}/words/19
 
 
 
