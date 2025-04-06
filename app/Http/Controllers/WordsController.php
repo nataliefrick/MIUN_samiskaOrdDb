@@ -75,8 +75,9 @@ class WordsController extends Controller
             return response()->json($word, 201);
     
         } catch (\Exception $e) {
-            \Log::error('Store error: ' . $e->getMessage());
-            return response()->json(['error' => 'Something went wrong', 'details' => $e->getMessage()], 500);
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
         }
 
 
