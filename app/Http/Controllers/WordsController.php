@@ -67,15 +67,17 @@ class WordsController extends Controller
             'definition_sydsamiska',
             'word_svenska',
             'definition_svenska',
+            'word_norska',
+            'definition_norska',
             'synonyms',
             'antonyms',
             'example_of_use',
-            'link_to_update',
             'sources',
             'arousal_level',
             'frequency',
             'node_id',
-            'expression'
+            'expression',
+            'translation'
 
             // 'word_sydsamiska' => 'nullable|string|max:255',
             // 'definition_sydsamiska' => 'nullable|string',
