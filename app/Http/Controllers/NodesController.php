@@ -34,12 +34,12 @@ class NodesController extends Controller
      */
     public function store(Request $request)
     {
-        $request ->validate([
-            'main_node',
-            'polarity_node',
-            'sub_node'
+        $validated = $request->validate([
+            'main_node' => 'required|string|max:255',
+            'polarity_node' => 'nullable|string|max:255',
+            'sub_node' => 'nullable|string|max:255',
         ]);
-        return Nodes::create($request->all());
+        return Nodes::create($validated);
     }
     
 

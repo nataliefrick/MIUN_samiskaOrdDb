@@ -102,7 +102,7 @@ Content-Type: application/json
 {
     "main_node": "känslor",
     "polarity_node": "positiva",
-    "sub_node": "giddy",
+    "sub_node": "giddy"
 }
 
 GET {{hostname}}/words/19
